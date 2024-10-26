@@ -60,8 +60,8 @@
         msg.style.backgroundColor = ''; 
     };
 
-       // Toggle between light and dark modes
-       themeToggleButton.addEventListener("click", () => {
+    // Toggle between light and dark modes
+    themeToggleButton.addEventListener("click", () => {
         if (body.classList.contains("light")) {
             body.classList.add("dark");
             body.classList.remove("light");
@@ -81,5 +81,4 @@
     });
 
     resetButton.addEventListener("click", resetGame);
-    themeToggleButton.addEventListener("click", toggleTheme);
 })();
