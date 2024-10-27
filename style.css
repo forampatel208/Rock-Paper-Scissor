@@ -1,7 +1,31 @@
+/* CSS Variables for easier theme management */
+:root {
+  --light-bg: #f5f5f5;
+  --light-text: #333;
+  --light-h1-bg: #cce7ff;
+  --light-hover: #b0d4ff;
+  --light-msg-bg: #e0f7fa;
+
+  --dark-bg: #1e1e1e;
+  --dark-text: #fff;
+  --dark-h1-bg: #081b31;
+  --dark-hover: #2c2c2c;
+  --dark-msg-bg: #081b31;
+
+  --choice-size: 165px;
+  --image-size: 150px;
+  --gap-large: 3rem;
+  --gap-extra-large: 5rem;
+}
+
 /* Base styles */
 * {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
+}
+
+body {
   text-align: center;
 }
 
@@ -12,58 +36,59 @@ h1 {
 
 /* Light mode styles */
 body.light {
-  background-color: #f5f5f5;
-  color: #333;
+  background-color: var(--light-bg);
+  color: var(--light-text);
 }
 
 body.light h1 {
-  background-color: #cce7ff; /* Light blue background */
-  color: #081b31; /* Dark text for contrast */
+  background-color: var(--light-h1-bg);
+  color: var(--dark-h1-bg);
 }
 
 body.light .choice:hover {
-  background-color: #b0d4ff; /* Light hover effect */
+  background-color: var(--light-hover);
 }
 
 body.light .msg-container {
-  background-color: #e0f7fa; /* Light message background */
+  background-color: var(--light-msg-bg);
 }
 
 /* Dark mode styles */
 body.dark {
-  background-color: #1e1e1e;
-  color: #fff;
+  background-color: var(--dark-bg);
+  color: var(--dark-text);
 }
 
 body.dark h1 {
-  background-color: #081b31; /* Keep the same dark color */
+  background-color: var(--dark-h1-bg);
 }
 
 body.dark .choice:hover {
-  background-color: #2c2c2c; /* Dark hover effect */
+  background-color: var(--dark-hover);
 }
 
 body.dark .msg-container {
-  background-color: #081b31; /* Dark message background */
+  background-color: var(--dark-msg-bg);
 }
 
 /* Shared styles */
 .choice {
-  height: 165px;
-  width: 165px;
+  height: var(--choice-size);
+  width: var(--choice-size);
   border-radius: 50%;
   display: flex;
   justify-content: center;
   align-items: center;
+  transition: background-color 0.3s ease;
 }
 
 .choice:hover {
-  cursor: pointer; /* Cursor change on hover */
+  cursor: pointer;
 }
 
 img {
-  height: 150px;
-  width: 150px;
+  height: var(--image-size);
+  width: var(--image-size);
   object-fit: cover;
   border-radius: 50%;
 }
@@ -72,8 +97,8 @@ img {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 3rem;
-  margin-top: 5rem;
+  gap: var(--gap-large);
+  margin-top: var(--gap-extra-large);
 }
 
 .score-board {
@@ -81,8 +106,8 @@ img {
   justify-content: center;
   align-items: center;
   font-size: 2rem;
-  margin-top: 3rem;
-  gap: 5rem;
+  margin-top: var(--gap-large);
+  gap: var(--gap-extra-large);
 }
 
 #user-score,
@@ -91,13 +116,13 @@ img {
 }
 
 .msg-container {
-  margin-top: 5rem;
-  padding: 1rem; /* Add padding for better appearance */
-  border-radius: 1rem; /* Rounded corners */
-  display: inline; /* Inline display for the message container */
+  margin-top: var(--gap-extra-large);
+  padding: 1rem;
+  border-radius: 1rem;
+  display: inline-block;
 }
 
 #msg {
-  font-size: 2rem; /* Font size for the message */
+  font-size: 2rem;
   display: inline;
 }
